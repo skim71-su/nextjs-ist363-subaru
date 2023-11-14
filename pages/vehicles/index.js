@@ -3,7 +3,7 @@ import { getAllVehicle } from '../../lib/api';
 import Link from 'next/link';
 
 export async function getStaticProps() {
-    const vehicles = getAllVehicle();
+    const vehicles = await getAllVehicle();
     return {
         props: {
             vehicles
@@ -16,10 +16,9 @@ const VehiclesPage = ({ vehicles }) => {
         <h1>Vehicles</h1>
         <ul>
             {vehicles.map((vehicle, index) => {
-                const { model, price, slug } = vehicle;
+                const { title, slug } = vehicle.node;
                 return <li key={index}>
-                    <h3>{model}</h3>
-                    <h4>${price}</h4>
+                    <h3>{title}</h3>
                     <p>
                         <Link href={`/vehicles/${slug}`}>Learn more</Link>
                     </p>
