@@ -5,7 +5,7 @@ import { getVehicleBySlug, getAllVehicleSlugs } from '../../lib/api';
 // 1. getStaticPaths
 
 export async function getStaticPaths() {
-    const vehicles = getAllVehicleSlugs();
+    const vehicles = await getAllVehicleSlugs();
     const paths = vehicles.map((vehicle) => {
         const { slug } = vehicle.node;
         return {
@@ -20,9 +20,9 @@ export async function getStaticPaths() {
         fallback: false
     }
 }
-
+//2. getStaticProps
 export async function getStaticProps( { params }) {
-    const vehicleData = getVehicleBySlug(params.id);
+    const vehicleData = await getVehicleBySlug(params.id);
 
     return {
         props : {
@@ -31,10 +31,9 @@ export async function getStaticProps( { params }) {
     }
 }
 const SingleVehiclePage = ({ vehicleData }) => {
-    const { model, price } = vehicleData;
+    const { title, slug } = vehicleData;
     return <Layout>
-        <h1>{model}</h1>
-        <h2>${price}</h2>
+        <h1>{title}</h1>
     </Layout>
 }
 export default SingleVehiclePage;

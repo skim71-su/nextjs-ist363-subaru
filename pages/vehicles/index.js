@@ -1,9 +1,9 @@
 import Layout from '../../components/Layout';
-import { getAllVehicle } from '../../lib/api';
 import Link from 'next/link';
+import { getAllVehicles } from '../../lib/api';
 
 export async function getStaticProps() {
-    const vehicles = await getAllVehicle();
+    const vehicles = await getAllVehicles();
     return {
         props: {
             vehicles
