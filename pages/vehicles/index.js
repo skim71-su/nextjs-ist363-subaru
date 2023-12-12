@@ -4,8 +4,8 @@ import Container from '../../components/Container';
 import FilterBar from '../../components/FilterBar';
 import Grid from '../../components/Grid';
 import Layout from '../../components/Layout';
-import Link from 'next/link';
-import Image from 'next/image';
+
+
 import { getAllVehicles, getVehicleTypes } from '../../lib/api';
 
 export async function getStaticProps() {
@@ -50,26 +50,10 @@ const VehiclesPage = ({ vehicles, vehicleTypes }) => {
             items={vehicleTypes} 
             activeItem={activeVehicleType}
             setActiveItem={setActiveVehicleType}/>
-            <Grid>
-                {filteredVehicles.map((vehicle, index) => {
-                    const { title, slug, vehicleInformation } = vehicle.node;
-                    const { trimLevels } = vehicleInformation;
-                    return <article key={index}>
-                        {trimLevels && trimLevels[0].images.thumbnail &&
-                            <Image 
-                            src={trimLevels[0].images.thumbnail.node.sourceUrl}
-                            alt={trimLevels[0].images.thumbnail.node.altText}
-                            width={trimLevels[0].images.thumbnail.node.mediaDetails.width}
-                            height={trimLevels[0].images.thumbnail.node.mediaDetails.height}
-                        />
-                        }
-                        <h3>{title}</h3>
-                        <p>
-                            <Link href={`/vehicles/${slug}`}>Learn more</Link>
-                        </p>
-                    </article>
-                })}
-            </Grid>
+            <Grid 
+                items={filteredVehicles}
+                
+            />
     </Container>
        
     </Layout>
