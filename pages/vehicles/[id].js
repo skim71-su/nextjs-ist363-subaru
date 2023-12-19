@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Image from 'next/image';
 import Layout from '../../components/Layout';
 import Heading from '../../components/Heading';
 import { getVehicleBySlug, getAllVehicleSlugs } from '../../lib/api';
