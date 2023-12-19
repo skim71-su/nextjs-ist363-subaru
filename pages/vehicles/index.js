@@ -1,9 +1,6 @@
 import { useState } from 'react';
 
-import Container from '../../components/Container';
-import FilterBar from '../../components/FilterBar';
-import Grid from '../../components/Grid';
-import { useState } from 'react';
+
 
 import Container from '../../components/Container';
 import FilterBar from '../../components/FilterBar';
