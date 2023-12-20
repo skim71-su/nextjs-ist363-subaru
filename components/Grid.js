@@ -41,6 +41,7 @@ const Grid = ({ items }) => {
                             initial="closed"
                             animate="open"
                             variants={articleVariants}
+                            className={styles.grid__item }
                         >
                         {trimLevels && trimLevels[0].images.thumbnail &&
                             <Image 
@@ -57,7 +58,7 @@ const Grid = ({ items }) => {
                                 {title}
                         </Heading>
                         <Paragraph>
-                            starting at $25
+                            starting at ${trimLevels[0].msrp}
                         </Paragraph>
                         <Paragraph>
                             <Link href={`/vehicles/${slug}`}>Learn more</Link>

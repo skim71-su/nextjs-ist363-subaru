@@ -1,14 +1,12 @@
 import { useState } from 'react';
 
-
-import styles from './trimpicker.module.scss';
-
 import FormGroup from './FormGroup';
 import Heading from './Heading';
 import Image from 'next/image';
 import Label from './Label';
 import Select from './Select';
 
+import styles from './trimpicker.module.scss';
 
 const TrimPicker = ({ trims, locations }) => {
     const [activeTrim, setActiveTrim] = useState(0);

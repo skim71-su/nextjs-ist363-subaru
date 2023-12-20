@@ -10,4 +10,4 @@ const Footer = () => {
         <Paragraph>Copyright 2023 Subaru.</Paragraph>
     </footer>
 }
-export default Footer
+export default Footer;

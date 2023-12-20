@@ -7,13 +7,16 @@ import Logo from './Logo';
 import Nav from './Nav';
 import Row from './Row';
 import ButtonUI from './ButtonUI';
+import Link from 'next/link';
 
 const Header = () => {
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
     return <header className= {styles.header}>
          <Container>
             <Row justifyContent="space-between">
-                <Logo />
+                <Link href="/">
+                 <Logo />
+                </Link>
                 <Nav.Desktop />
                 <ButtonUI icon="menu" 
                           clickHandler={() => {
