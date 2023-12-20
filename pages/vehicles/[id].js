@@ -46,7 +46,7 @@ export async function getStaticProps( { params }) {
 const SingleVehiclePage = ({ vehicleData, drivingLocations }) => {
     const { title, slug, featuredImage, vehicleInformation } = vehicleData;
     const { headline } = vehicleInformation.showcase;
-    const { trimLevels, vehicleColor } = vehicleInformation;
+    const { trimLevels, vehicleColors } = vehicleInformation;
     return <Layout>
         <Head>
             <title>{title} | Subaru USA</title>
@@ -63,7 +63,7 @@ const SingleVehiclePage = ({ vehicleData, drivingLocations }) => {
                     locations={drivingLocations}
                 />
                 <ColorPicker 
-                    colors={vehicleColor}
+                    colors={vehicleColors}
                 />
             </Container>
             
