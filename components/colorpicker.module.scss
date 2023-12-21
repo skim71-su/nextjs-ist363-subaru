@@ -1,8 +1,37 @@
+@use '../sass/abstracts/mixins';
 .colorpicker {
     //background-color: yellow;
     &__image {
         width: 100%;
         height: auto;
     }
+    &__calltoactionsreg {
+        width:100%;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        background-color: black;
+        color: white;
+        text-align: center;
+        gap: 1rem;
+        &__flexbox {
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+        }
+        &__paragraph {
+            font-size: 1rem;
+            font-family: Arial;
+            line-height: 1.2;
+            color: white;
+            @include mixins.breakpoint(tablet) {
+                font-size: 1.1rem;
+            }
+            @include mixins.breakpoint(laptop) {
+                font-size: 1.2rem;
+            }
+            
+        }
+    }
     
 }
+
